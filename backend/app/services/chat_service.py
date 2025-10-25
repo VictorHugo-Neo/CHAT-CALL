@@ -1,20 +1,15 @@
 from langchain_ollama import OllamaLLM
 from langchain_core.prompts import PromptTemplate
 
-def get_ia_response(pergunta: str):
-    llm = OllamaLLM(model="mistral")
-    prompt  = PromptTemplate.from_template("Usuário: {pergunta}\nIA:")
-    chain = prompt | llm 
-
-    print("chatbot deepseek iniciado")
-    print("Digite sua pergunta ou 'sair' para encerrar.")
-
-    while True: 
-        pergunta = input("Você: ")
-        if pergunta.lower() in ['sair', 'exit', 'quit']:
-            print("Encerrando o chatbot. Até logo!")
-            break
-        resposta = chain.invoke({"pergunta": pergunta})
-        print(f"IA: {resposta}\n")
-    
+llm = OllamaLLM(model="mistral")
+prompt  = PromptTemplate.from_template("Usuário: {pergunta}\nIA:")
+chain = prompt | llm 
+def git_ia_response(user_question: str) -> str:
+    try:
+        print(f"INFO: Invocando a IA com: {user_question}")
+        resposta = chain.invoke({"pergunta": user_question})
+        return resposta
+    except Exception as e:
+        print(f"ERROR: Falha ao obter resposta da IA: {e}")
+        return "Desculpe, ocorreu um erro ao processar sua solicitação."
 
