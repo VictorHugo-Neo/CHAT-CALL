@@ -11,4 +11,4 @@ app = FastAPI(
 def read_root():
     return {"status": "Chat API está online!"}
 
-
+app.include_router(router, prefix="/api/v1")

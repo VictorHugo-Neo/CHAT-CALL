@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session      
 from .schemas import ChatRequest, ChatResponse
 from .services import chat_service
-from ..core.database import get_db
-from ..repositories import chat_repo
+from .core.database import get_db
+from .repositories import chat_repo
 
 router = APIRouter()
 

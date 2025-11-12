@@ -4,7 +4,7 @@ from langchain_core.prompts import PromptTemplate
 llm = OllamaLLM(model="mistral")
 prompt  = PromptTemplate.from_template("Usuário: {pergunta}\nIA:")
 chain = prompt | llm 
-def git_ia_response(user_question: str) -> str:
+def get_ai_response(user_question: str) -> str:
     try:
         print(f"INFO: Invocando a IA com: {user_question}")
         resposta = chain.invoke({"pergunta": user_question})
