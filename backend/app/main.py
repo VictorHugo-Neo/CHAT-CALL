@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from .routes import router  
-
+from fastapi.middleware.cors import CORSMiddleware # NOVO
 app = FastAPI(
     title="Chat API",
     description="Backend para o Chat-Call com IA",
