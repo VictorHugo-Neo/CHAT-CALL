@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from .routes import router  
-from fastapi.middleware.cors import CORSMiddleware # NOVO
+from fastapi.middleware.cors import CORSMiddleware 
 app = FastAPI(
     title="Chat API",
     description="Backend para o Chat-Call com IA",
@@ -8,8 +8,8 @@ app = FastAPI(
 )
 origins = [
     "http://localhost",
-    "http://localhost:3000", # Porta padrão do create-react-app
-    "http://localhost:5173", # Porta padrão do Vite
+    "http://localhost:3000", 
+    "http://localhost:5173", 
 ]
 app.add_middleware(
     CORSMiddleware,
