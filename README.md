@@ -70,20 +70,6 @@ O backend precisa de um arquivo `.env` para se conectar ao banco de dados Postgr
     DATABASE_URL="postgresql://SEU_USUARIO:SUA_SENHA@localhost/chat_call_db"
     ```
     *(Substitua `SEU_USUARIO`, `SUA_SENHA` e `chat_call_db` pelos seus dados reais do PostgreSQL.)*
-
-### 2. Frontend (`/frontend/.env`)
-
-O frontend precisa de um arquivo `.env` para saber onde o backend está rodando.
-
-1.  Na pasta `/frontend`, crie um novo arquivo chamado `.env`.
-2.  Adicione a URL base da sua API FastAPI:
-
-    ```ini
-    # /frontend/.env
-    VITE_API_BASE_URL="[http://127.0.0.1:8000/api/v1](http://127.0.0.1:8000/api/v1)"
-    ```
-    *(**Importante:** No Vite, todas as variáveis de ambiente expostas ao navegador **devem** começar com o prefixo `VITE_`.)*
-
 ---
 
 ## 🚀 Como Rodar o Projeto
