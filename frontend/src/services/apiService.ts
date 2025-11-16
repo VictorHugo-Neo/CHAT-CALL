@@ -22,3 +22,21 @@ export async function fetchAiResponse(pergunta: string): Promise<string> {
   const data = (await response.json()) as ApiResponse;
   return data.resposta;
 }
+
+export async function fetchHistory(): Promise<Message[]> {
+  const response = await fetch(`${API_URL}/history`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Falha ao buscar histórico da API");
+  }
+
+  const history = (await response.json()) as Message[];
+  
+  console.log("Histórico carregado:", history);
+  return history;
+}

@@ -22,4 +22,4 @@ app.add_middleware(
 def read_root():
     return {"status": "Chat API está online!"}
 
-app.include_router(router, prefix="/api/v1")
+app.include_router(router, prefix="/api/v1", tags=["chat"])
